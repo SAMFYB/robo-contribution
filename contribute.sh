@@ -9,8 +9,8 @@ date="$1"
 year="$2"
 upto="$3"
 
-touch "contribution $date $year"
-git add "contribution $date $year"
+touch "contribution-$date-$year"
+git add "contribution-$date-$year"
 GIT_AUTHOR_DATE="$date 00:00:00 $year -0500" git commit -m "make contribution $date $year"
 
 if [[ $upto -eq 0 ]]; then
@@ -18,7 +18,7 @@ if [[ $upto -eq 0 ]]; then
 fi
 
 for x in $(eval echo "{1..$upto}"); do
-  echo "+$x" >> "contribution $date $year"
+  echo "+$x" >> "contribution-$date-$year"
   git add .
   GIT_AUTHOR_DATE="$date 00:00:00 $year -0500" git commit -m "contribution $date $year +$x"
 done
