@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 if [[ $# -ne 3 ]]; then
   echo 'Usage: date year upto e.g. "JAN 1" 2020 5 (Makes 6 robo-commits when run first time on this date, otherwise 5)'
