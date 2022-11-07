@@ -20,5 +20,5 @@ fi
 for x in $(eval echo "{1..$upto}"); do
   echo "+$x" >> "contribution-$date-$year"
   git add .
-  GIT_AUTHOR_DATE="$date 00:00:00 $year -0500" git commit -m "contribution $date $year +$x"
+  GIT_AUTHOR_DATE="$date 00:00:00 $year -0500" GIT_COMMITTER_DATE="$date 00:00:00 $year -0500" git commit -m "contribution $date $year +$x"
 done
